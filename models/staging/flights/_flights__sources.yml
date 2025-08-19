@@ -1,0 +1,27 @@
+
+sources:
+  - name: demo_src
+    description: Дані з БД Авіаперельотів
+    database: dwh_flight
+    schema: demo_src
+    tables:
+      - name: aircrafts
+        description: Моделі літаків
+      - name: aircrafts_data
+      - name: airports
+        description: Аеропорти
+      - name: airports_data
+      - name: boarding_passes
+      - name: bookings
+        loaded_at_field: "book_date::timestamp"
+        freshness:
+          warn_after: {count: 6, period: hour}
+          error_after: {count: 1, period: day}
+          filter: "book_date >= (current_date - interval '3 day')"
+      - name: flights
+      - name: flights_v
+      - name: routes
+      - name: seats
+        description: Місця в літаку
+      - name: ticket_flights
+      - name: tickets

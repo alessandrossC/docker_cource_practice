@@ -1,0 +1,6 @@
+{
+  "dbt.dbtIntegration": "core",
+  "dbt.dbtPythonPathOverride": "/opt/anaconda3/envs/dbt-env/bin/python",
+  "python.defaultInterpreterPath": "/opt/anaconda3/envs/dbt-env/bin/python",
+  "DockerRun.DisableDockerrc": true
+}
